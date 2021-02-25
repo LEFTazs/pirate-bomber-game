@@ -35,7 +35,13 @@ public class EnemyShipBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        currentHealth -= col.gameObject.GetComponent<BombBehaviour>().damage;
+        if(col.transform.gameObject.tag == "bomb") 
+        {
+            currentHealth -= col.gameObject.GetComponent<BombBehaviour>().damage;
+        } else 
+        {
+            currentHealth = 0;
+        }
     }
 
     private void updateHealthBar() 
