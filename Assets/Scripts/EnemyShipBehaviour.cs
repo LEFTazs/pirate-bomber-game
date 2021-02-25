@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyShipBehaviour : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject playerShip;
 
     public float health = 100f;
+    public int scoreValue = 100;
     
     private float currentHealth;
     //private float relativeHeight = 1.5f;
@@ -25,6 +27,9 @@ public class EnemyShipBehaviour : MonoBehaviour
         {
             GameObject explosionInstance = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             explosionInstance.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+
+            playerShip.GetComponent<PlayerShipBehaviour>().score += 100;
+            
             //Destroy(healthBar);
             Destroy(gameObject);
         } else 

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerShipBehaviour : MonoBehaviour
 {
@@ -10,10 +12,13 @@ public class PlayerShipBehaviour : MonoBehaviour
     
     public int currentLives;
 
+    public int score;
+
     // Start is called before the first frame update
     void Start()
     {
         currentLives = lives;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class PlayerShipBehaviour : MonoBehaviour
             GameObject explosionInstance = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             explosionInstance.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            Application.Quit();  // TODO: gameover screen
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
     }
 
