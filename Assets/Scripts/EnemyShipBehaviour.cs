@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyShipBehaviour : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject explosionSound;
     public GameObject playerShip;
 
     public float health = 100f;
@@ -40,6 +41,7 @@ public class EnemyShipBehaviour : MonoBehaviour
             currentHealth -= col.gameObject.GetComponent<BombBehaviour>().damage;
         } else 
         {
+            Instantiate(explosionSound, gameObject.transform.position, Quaternion.identity);
             currentHealth = 0;
         }
     }

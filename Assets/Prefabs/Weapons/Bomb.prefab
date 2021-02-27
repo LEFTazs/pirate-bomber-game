@@ -135,7 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
+  explosionSound: {fileID: 1812347604817790799, guid: 5166d285d814f3c4a9548fcfb162dcc9,
+    type: 3}
   damage: 5
+  throwDelay: 1
 --- !u!114 &-1078708241187466736
 MonoBehaviour:
   m_ObjectHideFlags: 0

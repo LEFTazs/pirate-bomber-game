@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 145476403778329416}
   - component: {fileID: 8809534480703898943}
   m_Layer: 0
-  m_Name: EnemyShip
+  m_Name: SmallEnemyShip
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
+  explosionSound: {fileID: 1812347604817790799, guid: 5166d285d814f3c4a9548fcfb162dcc9,
+    type: 3}
   playerShip: {fileID: 4601973209276981643, guid: c22b1f9c6efa51643a14fa7b887d8365,
     type: 3}
   health: 5
