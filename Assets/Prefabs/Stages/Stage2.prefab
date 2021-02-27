@@ -45,8 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 145476403778329415, guid: e366cdd2c695b954d89c628e60db4d90, type: 3}
+  - {fileID: 1567518214781332755, guid: 27e212f40d3e32443add0abe068f64e4, type: 3}
   probabilites:
-  - 1
-  minSpawnDelaySeconds: 0
-  maxSpawnDelaySeconds: 1
+  - 0.6
+  - 0.4
+  minSpawnDelaySeconds: 1
+  maxSpawnDelaySeconds: 4
   numOfEnemiesToSpawn: 10

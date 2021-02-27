@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2153154518120621929}
   - component: {fileID: 3122518009959483246}
   m_Layer: 0
-  m_Name: BeginningStage 1
+  m_Name: Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 145476403778329415, guid: e366cdd2c695b954d89c628e60db4d90, type: 3}
+  - {fileID: 1567518214781332755, guid: 27e212f40d3e32443add0abe068f64e4, type: 3}
+  - {fileID: 6118798967976098566, guid: e9050ab212a47364fa186a4a95b2fe0c, type: 3}
   probabilites:
-  - 1
-  minSpawnDelaySeconds: 3
-  maxSpawnDelaySeconds: 5
-  numOfEnemiesToSpawn: 10
+  - 0.6
+  - 0.3
+  - 0.1
+  minSpawnDelaySeconds: 1
+  maxSpawnDelaySeconds: 4
+  numOfEnemiesToSpawn: 20
