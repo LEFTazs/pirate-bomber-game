@@ -27,7 +27,7 @@ public class EnemyShipBehaviour : MonoBehaviour
             GameObject explosionInstance = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             explosionInstance.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            playerShip.GetComponent<PlayerShipBehaviour>().score += 100;
+            playerShip.GetComponent<PlayerShipBehaviour>().score += scoreValue;
             
             Destroy(gameObject);
         }

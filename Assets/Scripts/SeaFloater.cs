@@ -65,7 +65,7 @@ public class SeaFloater : MonoBehaviour
         int sampleSize = 1000;
         for (float samplePosition = leftBound; samplePosition < rightBound; samplePosition+=(wholeSize/sampleSize)) {
             float sampleValue = getHeightForPoint(samplePosition);
-            Vector3 samplePoint = new Vector3(samplePosition, originalHeight + sampleValue - lineWidth/2.5f, 0f);
+            Vector3 samplePoint = new Vector3(samplePosition, originalHeight + sampleValue - lineWidth/2.5f, -1f);
             samplePoints.Add(samplePoint);
         }
         return samplePoints.ToArray();

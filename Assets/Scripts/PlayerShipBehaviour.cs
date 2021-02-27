@@ -10,14 +10,21 @@ public class PlayerShipBehaviour : MonoBehaviour
 
     public int lives = 3;
     
+    [HideInInspector] 
     public int currentLives;
 
+    [HideInInspector] 
     public int score;
 
     // Start is called before the first frame update
     void Start()
     {
         currentLives = lives;
+        score = 0;
+    }
+
+    void Awake()
+    {
         score = 0;
     }
 
