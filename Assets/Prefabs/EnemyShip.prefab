@@ -125,3 +125,5 @@ MonoBehaviour:
   playerShip: {fileID: 4601973209276981643, guid: c22b1f9c6efa51643a14fa7b887d8365,
     type: 3}
   health: 10
+  speed: 5
+  scoreValue: 100

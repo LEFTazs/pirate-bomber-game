@@ -8,15 +8,14 @@ public class EnemyShipBehaviour : MonoBehaviour
     public GameObject playerShip;
 
     public float health = 100f;
+    public float speed = 5f;
     public int scoreValue = 100;
     
     private float currentHealth;
-    //private float relativeHeight = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //healthBar = Instantiate(healthBar, gameObject.transform.position + new Vector3(0, relativeHeight, 0), Quaternion.identity);
         currentHealth = health;
     }
 
@@ -30,11 +29,7 @@ public class EnemyShipBehaviour : MonoBehaviour
 
             playerShip.GetComponent<PlayerShipBehaviour>().score += 100;
             
-            //Destroy(healthBar);
             Destroy(gameObject);
-        } else 
-        {
-            updateHealthBar();
         }
     }
 
@@ -47,17 +42,5 @@ public class EnemyShipBehaviour : MonoBehaviour
         {
             currentHealth = 0;
         }
-    }
-
-    private void updateHealthBar() 
-    {
-        /*healthBar.transform.position = gameObject.transform.position + new Vector3(0, relativeHeight, 0);
-        float healthPercent = currentHealth / health;
-        Gradient gradient = new Gradient();
-        gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(Color.red, 0.0f), new GradientColorKey(Color.red, healthPercent), new GradientColorKey(Color.white, 1.0f) },
-            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, healthPercent), new GradientAlphaKey(1.0f, 1.0f) }
-        );
-        healthBar.colorGradient = gradient;*/
     }
 }

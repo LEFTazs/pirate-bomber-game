@@ -30,7 +30,8 @@ public class SeaFloater : MonoBehaviour
         foreach (GameObject enemyShip in enemySpawner.GetComponent<EnemySpawner>().spawnedEnemies) 
         {
             Vector2 newPositionForEnemy = getNewPositionForGameObject(enemyShip, originalHeight);
-            newPositionForEnemy.x -= 0.02f;
+            float speed = enemyShip.GetComponent<EnemyShipBehaviour>().speed;
+            newPositionForEnemy.x -= speed * Time.deltaTime;
             Quaternion newDirectionForEnemy = getNewDirectionForGameObject(enemyShip);
             enemyShip.transform.SetPositionAndRotation(newPositionForEnemy, newDirectionForEnemy);
         }

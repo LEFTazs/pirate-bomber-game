@@ -30,7 +30,6 @@ public class HeartManager : MonoBehaviour
         if (lastLive > 0) 
         {
             int currentLive = playerShip.GetComponent<PlayerShipBehaviour>().currentLives;
-            Debug.Log(currentLive);
             if (lastLive > currentLive)
             {
                 Destroy(hearts[lastLive-1]);

@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
 	
 	public Vector3 targetPos;
-	public float speed = 0.1f;
+	public float speed = 20f;
 	public float arcHeight =  1;
 	
 	
@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
     {
         float currentX = transform.position.x;
         float xChange = calculateXChangeForConsistentMovement(currentX);
-        float nextX = currentX + xChange;
+        float nextX = currentX + xChange * Time.deltaTime;
         Vector3 nextPos = new Vector3(nextX, parabolaEquation.calculate(nextX), transform.position.z);
 		
 
