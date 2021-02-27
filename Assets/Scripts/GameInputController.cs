@@ -18,11 +18,9 @@ public class GameInputController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        float shipRightSide = ship.transform.position.x + ship.GetComponent<BoxCollider2D>().offset.x + ship.GetComponent<BoxCollider2D>().size.x * ship.transform.localScale.x / 2;
+        if (Input.GetMouseButtonDown(0) && sceneCamera.ScreenToWorldPoint(Input.mousePosition).x > shipRightSide) 
         {
-            //Vector2 forceDirection = getClickPositionRelativeTo(startPosition);
-            //sendBombFlyingFromTo(startPosition, forceDirection);
-
             GameObject newBomb = Instantiate(bomb, startPosition, Quaternion.identity);
             newBomb.GetComponent<Projectile>().targetPos = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
 
