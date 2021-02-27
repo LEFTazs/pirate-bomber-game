@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject stageManager;
     public int maxEnemies = 5;
-    public int spawnDelaySeconds = 4;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private Vector2 startCoordinate = new Vector2(15f, 0f);
-    private float lastGeneration = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +22,13 @@ public class EnemySpawner : MonoBehaviour
     {
         deleteDestroyedEnemies();
 
-        if (spawnedEnemies.Count < maxEnemies && Time.time - lastGeneration > spawnDelaySeconds) 
+        if (spawnedEnemies.Count < maxEnemies) 
         {
-            createNew();
-            lastGeneration = Time.time;
+            GameObject nextEnemy = stageManager.GetComponent<StageManagerBehaviour>().getNextEnemyIfReady();
+            if (nextEnemy != null)
+            {
+                createNew(nextEnemy);
+            }
         }
     }
 
@@ -47,9 +48,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void createNew() 
+    private void createNew(GameObject enemyToCreate) 
     {
-        GameObject newEnemy = Instantiate(enemy, startCoordinate, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemyToCreate, startCoordinate, Quaternion.identity);
         spawnedEnemies.Add(newEnemy);
     }
 }

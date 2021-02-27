@@ -124,6 +124,6 @@ MonoBehaviour:
   explosion: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
   playerShip: {fileID: 4601973209276981643, guid: c22b1f9c6efa51643a14fa7b887d8365,
     type: 3}
-  health: 10
+  health: 5
   speed: 5
   scoreValue: 100
