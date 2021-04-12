@@ -21,7 +21,7 @@ public class SeaFloater : MonoBehaviour
     }
     void Update()
     {
-        tick += 0.01f;
+        tick += 2f * Time.deltaTime;
         
         Vector2 newPositionForPlayer = getNewPositionForGameObject(playerShip, originalHeight);
         Quaternion newDirectionForPlayer = getNewDirectionForGameObject(playerShip);
